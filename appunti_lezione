@@ -1,0 +1,45 @@
+Gli appunti su stringhe, array e concetti base sono sul quaderno di sistemi operativi
+Usare la classi costruite da noi è il vero vantaggio della programmazione a oggetti. 
+In java la relazione tra classe e file è 1 a 1, per ogni file è presente una classe. Una volta definita una classe si definiscono gli 
+attributi comuni a tutti gli oggetti della classe. Classe rappresentazione estremamente semplificata della classe di interesse. I 
+costruttori sono metodi particolari senza un tipo di ritorno (perchè ritornano l'oggetto della classe) con lo stesso nome della classe che
+prendono valori dall'esterno e inizializzano gli attributi interni della classe, servono per semplificare l'inizializzazione di un oggetto.
+this è un riferimento a se stesso, puoi usarla nel costruttore per inizializzare le variabili.
+
+Polimorfismo:
+Statico, ad esempio puoi avere due costruttori con lo stesso nome ma con parametri diversi.
+Tutte le classi ereditano da un antenato comune chiamato object, quando chiediamo a una println la stampa di un oggetto dobbiamo usare
+to Stirng() che è un metodo di object e quindi comune a tutti gli oggetti. Si tratta di un'iplementazione comune a tutti gli oggetti.
+Per rimuovere questo metodo che a volte non riesce a stampare correttamente il nostro oggetto si fa l'overwrite del metodo toString. Su
+intellij puoi fare tasto destro overwrite. this. rappresenta me stesso, this() invoca un altro costruttore della stessa classe.
+Tutte le classi hanno un costruttore di default senza valori, ma nell'istante in cui tu crei un costruttore java disabilita il costruttore
+di default e se vuoi un costruttore senza parametri devi crearlo tu.
+
+Metodo standard per rappresentare le classi derivato da UML Unified Modeling Language linguaggio per definire la struttura del software.
+Diagramma delle classi composto da:
+- titolo
+- attributi
+- metodi
+
+Lo stato interno di un oggetto è il valore di tutte la variabili di quell'oggetto, importante!.
+
+I metodi sono sostanzialmente funzioni incapsulati dentro una classe. 
+
+I metodi public sono visibili all'esterno della classe
+I mtedoi private sono visibili solo all'interno della classe
+I metodi default hanno visibilità solo tra le classi contenute nel package 
+
+I metodi getter e setter servono per ritornare l'attributo corrispondente dell'oggetto, così puoi avere un attributo privato e un getter
+per accedere a quell'attributo. Usare questo approccio è più lento rispetto a rendere il metodo pubblico e assegnargli direttamente i valori
+l'unico vantaggio che hai è che puoi controllare chi può modificare la variabile con delle condizioni nel setter (altrimneti sono 
+sostanzialmente inutili).
+
+Con i metodi static puoi evitare di creare un oggetto per usare i metodi contenuti all'interno della funzione. Di solito oggi si usano 
+metodi static per la libreria
+
+Di default un metodo è di tipo default quindi visibile solo all'interno del package
+
+libreria lombok permette di automatizzare le operazioni di modifica codice legate ad esempio all'aggiunta di un attributo che dovrebbe
+modificare tutti i getter e i setter.
+Maven Central per trovare i pezzi di codice e librerie pronte all'uso da aggiungere al file pom.xml.
+lombok per esempio ha all attribute constructor che ti permette di creare un costruttore con tutte i parametri della funzione
