@@ -43,3 +43,35 @@ libreria lombok permette di automatizzare le operazioni di modifica codice legat
 modificare tutti i getter e i setter.
 Maven Central per trovare i pezzi di codice e librerie pronte all'uso da aggiungere al file pom.xml.
 lombok per esempio ha all attribute constructor che ti permette di creare un costruttore con tutte i parametri della funzione
+
+La conseguenza più diretta della programmazione ad oggetti è l'incapsulamento cioè una classe dentro un altra classe.
+La freccia nei grafici UML significa specializza o estende la classe specificata. Generalmente 4 livelli di ereditarietà sono considerati
+sufficienti perchè dopo non ci si riesce più a orientarsi nelle varie classi. In java ogni classe ha un solo genitore anche se può avere
+più figli. 
+Le classi figlie ereditano tutti i metodi della classe padre senza doverli riscrivere. Normalmente le sottoclassi specializzano quindi
+aggiungono attributi rispetto alle classi padri. Una classe final significa che non può avere figli (non può essere più specializzata).
+Si può usare un riferimento generico per riferirsi a una sottoclasse quindi a un oggetto più specifico. Tuttavia mettere tanti oggetti
+con una radice comune in un solo riferimento fa perdere la specializzazione caratteristica di quella classe.
+
+L'upcast permette di usare un riferimento a una super classe per riferirsi a una o più sottoclassi, viene eseguito in automatico da java. 
+Nell'esempio l'upcast avviene quando definisci l'array di persone con dentro anche un clienti e un impiegato.
+
+Il downcast consiste nell'assegnare un riferimento di una superclasse a una sottoclasse da qualcosa di generico vai a qualcosa di più
+specifico, questo richiede un cast esplicito. Prima di fare un downcast dobbiamo usare instanceof per verificare che l'oggetto di cui
+stimo andando a fare downcast sia effettivamente compatibile con il tipo della sottoclasse a cui lo vogliamo assegnare. 
+
+Tutta le classi specializzano la classe object, questo permette di fornire a tutte le classe dei metodi di base contenuti in questa classe.
+Tecnicamnete potresti fare un array di object e metterci dentro tutti gli oggetti di tutti i tipi che vuoi. 
+I metodi contenuti dentro object sono:
+- Equals che confronta se due oggetti di quella classe sono uguali (si può fare l'override perchè confronta solo i riferimenti, quindi se
+vuoi un vero controllo sul contenuto degli oggetti devi implementarlo tu).
+- se due oggetti sono uguali dalla prospettiva di equals devono essere uguale anche secondo la prospettiva di hashcode. Dentro gli hashset
+non ci possono essere duplicati. 
+
+Con la keyword final puoi impedire l'override dei metodi. Il polimorfismo dinamico permette di fare l'override di un particolare oggetto e 
+ottenere un output diverso.
+
+Polimorfismo dinamico permette di invocare metodi di un oggetti basati sulla loro specializzazione anche se parte di un array che 
+rappresenta la superclasse, tramite override. 
+
+Prima di fare downcast usare sempre instanceof per verificare se l'oggetot è effettivamente del tipo su cui fai downcast
