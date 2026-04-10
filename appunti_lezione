@@ -5,6 +5,8 @@ attributi comuni a tutti gli oggetti della classe. Classe rappresentazione estre
 costruttori sono metodi particolari senza un tipo di ritorno (perchè ritornano l'oggetto della classe) con lo stesso nome della classe che
 prendono valori dall'esterno e inizializzano gli attributi interni della classe, servono per semplificare l'inizializzazione di un oggetto.
 this è un riferimento a se stesso, puoi usarla nel costruttore per inizializzare le variabili.
+In java per leggere da stdinput usi Scanner. Scanner va chiuso di solito (se lavori su stdin non lo chiudi perchè altrimenti non 
+potresti più accettare input fino alla fine del progamma).
 
 Polimorfismo:
 Statico, ad esempio puoi avere due costruttori con lo stesso nome ma con parametri diversi.
@@ -75,3 +77,43 @@ Polimorfismo dinamico permette di invocare metodi di un oggetti basati sulla lor
 rappresenta la superclasse, tramite override. 
 
 Prima di fare downcast usare sempre instanceof per verificare se l'oggetot è effettivamente del tipo su cui fai downcast
+Una vantaggio di usare una classe astratta è che tutte le classi figlie devono implementare gli attributi contenuti nella classe 
+padre per funzionare.
+
+Le classi astratte forniscono un modo di compattare il codice comune a più oggetti che possono essere usati in un interfaccia.
+Una interfaccia dovrebbe contenere i metodi con cui le altre classi interagiscono con gli oggetti su vuoi creare l'interfaccia, le
+classi astratte invece definiscono più specificatamente cosa le singole sottoclassi devono effettivamente implementare per lavorare 
+correttamente nell'interfaccia. Una volta che la sottoclasse ha implementato tutto quello contenuto nella classe astratta può essere
+invocata correttamente da un user esterno.
+
+Una altra differenza tra le interfacce e le classi astratte è che le classi possono ereditare più interfaccia mentre possono
+essere l'estensione di una sola classe astratta es puoi scrivere public class Fish implements Prey, Predator{}
+
+Il polimorfismo (iterare su un arry con tanti oggetti diversi) può essere raggiunto usando sia una classe astratta o comune sia un
+interfaccia.
+
+Una modifica a una funzione a cui accede il main può comportare una modifica anche nel main stesso. Questo può causare problemi quando
+il main arriva a chiamare tante funzioni. Nel grafico cambiare le foglie può causare un domino di modifiche che può arrivare fino al main
+rallentando lo sviluppo.
+Si potrebbe pensare di fare una classe padre e specializzarle nelle classe figlie. Questo approccio è corretto però nella classe principale
+a cui colleghi tutte le altre il metodo draw() non è implementabile perchè non rappresenta un qualcosa di concreto.
+Per promuovere la riutilizzabilità del codice e per avere maggiore espressività dicendo cosa va implementato si usano le classi astratte e 
+le interfacce. 
+Un'interfaccia è semplicemente un elenco di metodi che contiene le features che le classi figli devono implementare. Le interfacce sono 
+usate come meccanismo di disaccoppiamento tra oggetti e concetto generale che viene utilizzato. 
+Un interfaccia è un concetto completamente astratto, non si può istanziare.
+Le interfacce is possono estendere come le classi. Una classe può essere estesa solo da un altra classe tuttavia può implementare molteplici
+interfacce. 
+In un interfaccia puoi implementare delle funzionoi statiche che possono riferirsi alle variabili statiche contenute nelle interfacce.
+Se un interfaccia deve essere cambiata hai dei problemi perchè dovresti cambiare in tutte le classi che implementano l'interfaccia la 
+funzione che viene aggiunta. Per aggirare questo problema si utilizzano le classi default che implementano una nuova funzionalità 
+direttamente nell'interfaccia. 
+Dentro la classe astratta inizia l'implementazione del concetto di interfaccia che poi viene specializzato nelle singole sottoclassi.
+Interfaccia features generali in termini di metodi, successivamente implementazione concreta tramite classi astratte che si specializzano
+nei figli. 
+Puoi vivere senza classi astratte ma le interfacce sono più importanti
+Le classi record sono delle classi particolari immutabili con attributi final con i soliti pezzi di codice standard (costruttre, gettter,
+setter e metodo to string) è un metodo per scrivere in modo compatto una classe immutabile.
+
+per creare una lista List<String> l = new ArrayList<>(); crei una lista basata su array
+
